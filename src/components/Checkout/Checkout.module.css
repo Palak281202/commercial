@@ -1,0 +1,19 @@
+.h2{
+    text-align: center;
+}
+
+.button{
+    color: white;
+    background-color: rgb(154, 76, 90);
+    margin: 0rem 0rem 0rem 17rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-color: transparent;
+}
+
+.button:hover{
+    background-color: rgb(142, 51, 66);
+    color: pink;
+}

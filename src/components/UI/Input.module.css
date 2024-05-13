@@ -1,0 +1,16 @@
+.div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.input{
+    margin: 0.5rem;
+    background-color: transparent;
+    border-radius: 0.7rem;
+    padding: 0.3rem 0.5rem;
+}
+
+.label{
+    margin: 0.5rem;
+    color: black;
+}

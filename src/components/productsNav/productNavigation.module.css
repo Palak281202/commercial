@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Diphylleia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+.ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+li{
+    margin: 1rem;
+}
+
+.li a {
+    margin: 1.5rem 3rem;
+    padding: 1rem;
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+}
+
+.li a:hover,
+.li a.active {
+    color:pink;
+    text-decoration: underline;
+}

@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Diphylleia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+.main {
+    display: flex;
+    background-color: #d9d9d9;
+    margin: 0rem 8rem;
+    flex-wrap: wrap;
+}
+
+.h2 {
+    font-size: 3rem;
+    color: rgb(76, 76, 76);
+}
+
+.h1 {
+    font-size: 4.5rem;
+    color: rgb(76, 76, 76);
+}
+
+.img {
+    height: 60vh;
+    margin: 1rem 4rem 1rem 1.5rem;
+    opacity: 0.85;
+}
+
+.header {
+    margin: 0rem 4rem 0rem 6rem;
+}
+
+.topcata {
+    text-align: center;
+    color: rgb(45, 45, 45);
+    margin: 3rem 0rem 0rem 0rem;
+}
+
+.flex {
+    display: flex;
+    margin: 4rem 8rem;
+    background-color: #d9d9d9;
+    flex-wrap: wrap;
+}
+
+.flex img {
+    height: 50vh;
+    margin: 1rem 2rem;
+}
+
+.flex p {
+    margin: 5rem 3rem;
+    font-size: 1.3rem;
+    font-family: 'Rubik', sans-serif;
+    color: rgb(61, 60, 60);
+}

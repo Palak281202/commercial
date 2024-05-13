@@ -1,0 +1,32 @@
+.ul{
+    list-style-type: none;
+}
+
+.li{
+    display: flex;
+    justify-content: space-between;
+    margin: -0.5rem 0rem -2rem 0rem;
+}
+
+.button{
+    margin: 1.5rem 2rem;
+    background-color: rgb(154, 76, 90);
+    color: white;
+    border-radius: 50%;
+    font-size: 1rem;
+    border-color: transparent;
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.qp{
+    margin: 0.3rem 0rem;
+    color: grey;
+}
+
+.p{
+    align-self: center;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
