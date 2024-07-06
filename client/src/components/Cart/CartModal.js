@@ -1,11 +1,9 @@
-import { Suspense, lazy, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
-// import Cart from './Cart';
-import paraClass from '../../supense.module.css'
+import Cart from './Cart';
 import classes from './cartModal.module.css';
 
 function CartModal({ title, actions, open, onClose, text }) {
-    const Cart = lazy(()=>import('./Cart'));
     const dialog = useRef();
     useEffect(() => {
         const modal = dialog.current
@@ -22,7 +20,7 @@ function CartModal({ title, actions, open, onClose, text }) {
         // onClose={onClose}
         >
             <h2 className={classes.h2}>{title}</h2>
-            <Suspense fallback={<p className={paraClass.pload}>Loading...</p>}><Cart /></Suspense>
+            <Cart />
             <form method="dialog" className={classes.dialog}>
                 {actions}
             </form>

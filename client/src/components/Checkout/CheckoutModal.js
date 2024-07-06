@@ -5,7 +5,6 @@ import classes from './Checkoutmodal.module.css';
 import Checkout from './Checkout';
 
 export default function CheckoutModal({ title, actions, open, onClose }) {
-    // const Checkout = lazy(()=>import('./Checkout'));
     const dialog = useRef();
     useEffect(()=>{
         const modal = dialog.current;
