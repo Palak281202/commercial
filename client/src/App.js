@@ -1,63 +1,72 @@
-import './App.css';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import HomePage from './pages/HomePage.js';
-import BecomeSupplierPage from './pages/BecomeSupplierPage.js';
-import ProfilePage from './pages/ProfilePage.js';
-import CartPage from './pages/CartPage.js';
-import RootLayout from './pages/RootLayout.js';
-import MensEthinic from './pages/MensEthinic.js';
-import MensWestern from './pages/MensWestern.js';
-import WomensEthinicPage from './pages/WomensEthinicPage.js';
-import WomensWesternPage from './pages/WomensWesternPage.js';
-import { CartContextProvider } from './store/CartHandleStore.js';
-import WishlistPage from './pages/WishlistPage.js';
-import { WishListContextProvider } from './store/WishListHandleStore.js';
-import { CheckoutContextProvider } from './store/CheckoutHandler.js';
+import "./App.css";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import HomePage from "./pages/HomePage.js";
+import BecomeSupplierPage from "./pages/BecomeSupplierPage.js";
+import ProfilePage from "./pages/ProfilePage.js";
+import CartPage from "./pages/CartPage.js";
+import RootLayout from "./pages/RootLayout.js";
+import MensEthinic from "./pages/MensEthinic.js";
+import MensWestern from "./pages/MensWestern.js";
+import WomensEthinicPage from "./pages/WomensEthinicPage.js";
+import WomensWesternPage from "./pages/WomensWesternPage.js";
+import { CartContextProvider } from "./store/CartHandleStore.js";
+import WishlistPage from "./pages/WishlistPage.js";
+import { WishListContextProvider } from "./store/WishListHandleStore.js";
+import { CheckoutContextProvider } from "./store/CheckoutHandler.js";
+import Login from "./components/Authentication/Login.js";
+import Signup from "./components/Authentication/Signup.js";
 
 function App() {
-
   const router = createBrowserRouter([
     {
-      path: '/',
+      path: "/",
       element: <RootLayout />,
       children: [
         {
           index: true,
-          element: <HomePage />
+          element: <HomePage />,
         },
         {
-          path: 'becomesupplier',
-          element: <BecomeSupplierPage />
+          path: "becomesupplier",
+          element: <BecomeSupplierPage />,
         },
         {
-          path: 'profile',
-          element: <ProfilePage />
+          path: "login",
+          element: <Login />,
         },
         {
-          path: 'cart',
-          element: <CartPage />
+          path: "register",
+          element: <Signup />,
         },
         {
-          path: 'mensethinic',
-          element: <MensEthinic />
+          path: "profile",
+          element: <ProfilePage />,
         },
         {
-          path: 'menswestern',
-          element: <MensWestern />
+          path: "cart",
+          element: <CartPage />,
         },
         {
-          path: 'womensethinic',
-          element: <WomensEthinicPage />
+          path: "mensethinic",
+          element: <MensEthinic />,
         },
         {
-          path: 'womenswestern',
-          element: <WomensWesternPage />
+          path: "menswestern",
+          element: <MensWestern />,
         },
         {
-          path: 'wishlist',
-          element: <WishlistPage />
+          path: "womensethinic",
+          element: <WomensEthinicPage />,
         },
-      ]
+        {
+          path: "womenswestern",
+          element: <WomensWesternPage />,
+        },
+        {
+          path: "wishlist",
+          element: <WishlistPage />,
+        },
+      ],
     },
   ]);
   return (
