@@ -1,13 +1,28 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import CartContext from '../../store/CartHandleStore'
 import classes from './Cart.module.css';
+import { useSendData } from "../../helper/util";
 
 export default function Cart() {
   const cartCtx = useContext(CartContext);
+  const sendData = useSendData();
+  const [quantity, setQuantity] = useState(0);
+  const [items, setItems] = useState([]);
   const totalPrice = cartCtx.items.reduce((price, item) => price + (item.quantity * item.price), 0);
 
-  const addItemHandler = (item) => {
-    cartCtx.addItem(item);
+  const addItemHandler = async (item) => {
+    try {
+      const data = {
+        id: item.id, 
+        price: item.price,
+        quantity: item.quantity,
+      }
+      const response = await sendData("POST", "add-item", true, data);
+      setQuantity(response.item.quantity);
+      setItems(response.itemsArr);
+    } catch (error) {
+      throw error;
+    }
   }
 
   const deleteItemHandler = (id) => {
@@ -38,7 +53,7 @@ export default function Cart() {
               </div>
               <div>
                 <button onClick={() => addItemHandler(item)} className={classes.button}>+</button>
-                <span>{item.quantity}</span>
+                <span>{quantity}</span>
                 <button onClick={() => deleteItemHandler(item.id)} className={classes.button}>-</button>
               </div>
             </li>
