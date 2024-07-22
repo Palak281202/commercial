@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import classes from "./mainNavigation.module.css";
 import CartModal from "../Cart/CartModal";
 import CartContext from "../../store/CartHandleStore";
@@ -8,6 +8,7 @@ import CheckOutModal from "../Checkout/CheckoutModal";
 import SubmitModal from "../submit/SubmitModal";
 
 export default function MainNavigation() {
+  const navigate = useNavigate();
   const cartCtx = useContext(CartContext);
   let cssClasses = classes.logoClass;
   const modal = useRef();
@@ -55,6 +56,12 @@ export default function MainNavigation() {
       </div>
     );
   }
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate('/login');
+    // toast.success("succesfull logout");
+  };
 
   return (
     <div>
@@ -118,6 +125,11 @@ export default function MainNavigation() {
         <li>
           <button className={classes.cartButton} onClick={handleopenCart}>
             🛒Cart ({totalItemsInCart})
+          </button>
+        </li>
+        <li>
+          <button className={classes.cartButton} onClick={handleLogout}>
+            Logout
           </button>
         </li>
         {/* <li> */}

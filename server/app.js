@@ -3,6 +3,8 @@ import cors from "cors";
 import { connectDB } from "./config/dbConfig.js";
 import authenticationRoute from "./routes/auth.js";
 import cartItemRoute from "./routes/cartItem.js";
+import stripeRoute from "./routes/stripe.js";
+import wishItemRoute from "./routes/wishlist.js";
  
 const app = express();
 
@@ -14,6 +16,8 @@ connectDB();
 
 app.use("/api", authenticationRoute);
 app.use("/api", cartItemRoute);
+app.use("/api", stripeRoute);
+app.use("/api",wishItemRoute);
 
 app.get("/", (req, res) => {
   res.send("Hello, Node.js + Express!");
